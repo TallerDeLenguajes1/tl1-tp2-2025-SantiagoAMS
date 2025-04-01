@@ -1,0 +1,17 @@
+f) 
+# ¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+El archivo "tp2_1_1.c" ya no aparece en la carpeta 
+porque al crearlo en una rama A y al pasar a una rama B 
+sin antes haber hecho un merge, DESAPARECE porque 
+no forma parte del flujo de la rama A, ya que es una
+"zona independiente" de la otra "zona".
+
+# En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+En VSC se puede apreciar claramente lo mencionado en el punto anterior
+(la rama "B" se separa de la "A"), y los archivos creados
+y modificados en esa rama son independientes a los archivos de 
+la otra, por lo que se las ve tomando caminos separados.
+
+# En VSCode vuelva al “Source Control” vea los cambios, ¿Qué nota? 
+Se puede apreciar en VSC que las dos ramas convergen, y a efectos
+practicos los dos archivos respectivos de cada rama apareceran en la rama principal.
