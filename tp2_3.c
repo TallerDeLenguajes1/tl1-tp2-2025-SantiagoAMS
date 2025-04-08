@@ -10,7 +10,7 @@ int main()
 
     srand(time(NULL));
     int i, j;
-    int *pu = (int *)malloc(sizeof(int) * N);
+    int **pu = (int **)malloc(sizeof(int*) * N);
 
     for (i = 0; i < N; i++)
     {
@@ -18,8 +18,8 @@ int main()
 
         for (j = 0; j < M; j++)
         {
-            pu[i * N + j] = 1 + rand() % 100; //basicamente seria la celda [i][j]
-            printf("%d\t", pu[i * N + j]); 
+            pu[i][j] = 1 + rand() % 100;
+            printf("%d\t", pu[i][j]); 
         }
         printf("\n");
     }

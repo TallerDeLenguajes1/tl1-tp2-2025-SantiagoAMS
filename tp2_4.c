@@ -14,10 +14,28 @@ struct compu
                           // Datos generados
 };
 
+#define N 5
+
 int main()
 {
+    srand(time(NULL));
     char tipos[6][10] = {
         "Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
 
-        
+
+    struct compu * compus = (struct compu*)malloc(sizeof(struct compu)*N);
+
+    for (int i = 0; i < N; i++)
+    {
+        int velo = 1 + rand() % 3;
+        int anio = 2015 + rand() % (2024 - 2015);
+        int nucleos = rand() % 8;
+
+        compus[i].velocidad = velo;
+        compus[i].anio = anio;
+        compus[i].cantidad_nucleos = nucleos;
+        compus[i].tipo_cpu = tipos[(rand() % 6)];
+    }
+
+    free(compus);
 }
