@@ -18,11 +18,32 @@ struct compu
 
 
 void listarPCs(struct compu pcs[], int cantidad){
+    for (int i = 0 ; i<cantidad ; i++){
+        
+        printf("---- COMPUTADORA 1 %d ----\n",i);
+        listarCompuIndividual(pcs[i]);
+        printf("\n");
+    }
+}
 
+void listarCompuIndividual(struct compu compu){
+    printf("  Velocidad: %d\n",compu.velocidad);
+    printf("  Anio:      %d\n",compu.anio);
+    printf("  Nucleos:   %d\n",compu.cantidad_nucleos);
+    printf("  CPU:       %s\n",(compu.tipo_cpu));
 }
 
 void mostrarMasVieja(struct compu pcs[], int cantidad){
-
+    int indexMenor = 0;
+    for (int i =0 ; i<cantidad ; i++){
+        
+        if (pcs[i].anio<pcs[indexMenor].anio){
+            indexMenor = i;
+        }
+        
+    }
+    printf("\nLa computadora mas vieja es esta:");
+    listarCompuIndividual(pcs[indexMenor]);
 }
 
 void mostrarMasVeloz(struct compu pcs[], int cantidad){
@@ -36,7 +57,7 @@ int main()
         "Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
 
 
-    struct compu * compus = (struct compu*)malloc(sizeof(struct compu)*N);
+    struct compu compus[] = (struct compu*)malloc(sizeof(struct compu)*N);
 
     for (int i = 0; i < N; i++)
     {
@@ -48,13 +69,6 @@ int main()
         compus[i].anio = anio;
         compus[i].cantidad_nucleos = nucleos;
         compus[i].tipo_cpu = tipos[(rand() % 6)];
-
-        printf("---- Compu %d ----\n",i);
-        printf("  Velocidad: %d\n",compus[i].velocidad);
-        printf("  Anio:      %d\n",compus[i].anio);
-        printf("  Nucleos:   %d\n",compus[i].cantidad_nucleos);
-        printf("  CPU:       %s\n",(compus[i].tipo_cpu));
-        printf("\n");
 
     }
     free(compus);
