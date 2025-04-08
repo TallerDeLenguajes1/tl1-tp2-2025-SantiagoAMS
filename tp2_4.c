@@ -27,7 +27,7 @@ void listarPCs(struct compu pcs[], int cantidad){
 }
 
 void listarCompuIndividual(struct compu compu){
-    printf("  Velocidad: %d\n",compu.velocidad);
+    printf("  Velocidad: %dGHz\n",compu.velocidad);
     printf("  Anio:      %d\n",compu.anio);
     printf("  Nucleos:   %d\n",compu.cantidad_nucleos);
     printf("  CPU:       %s\n",(compu.tipo_cpu));
@@ -62,7 +62,7 @@ int main()
     for (int i = 0; i < N; i++)
     {
         int velo = 1 + rand() % 3;
-        int anio = 2015 + rand() % (2024 - 2015);
+        int anio = 2015 + (rand() % (2024 - 2015));
         int nucleos = rand() % 8;
 
         compus[i].velocidad = velo;
@@ -71,6 +71,11 @@ int main()
         compus[i].tipo_cpu = tipos[(rand() % 6)];
 
     }
+
+    listarPCs(compus,N);
+    mostrarMasVieja(compus,N);
+    mostrarMasVeloz(compus,N);
+
     free(compus);
 }
 
