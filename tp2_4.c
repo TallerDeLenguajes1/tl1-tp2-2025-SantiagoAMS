@@ -35,7 +35,14 @@ int main()
         compus[i].anio = anio;
         compus[i].cantidad_nucleos = nucleos;
         compus[i].tipo_cpu = tipos[(rand() % 6)];
-    }
 
+        printf("---- Compu %d ----\n",i);
+        printf("  Velocidad: %d\n",compus[i].velocidad);
+        printf("  Anio:      %d\n",compus[i].anio);
+        printf("  Nucleos:   %d\n",compus[i].cantidad_nucleos);
+        printf("  CPU:       %s\n",(compus[i].tipo_cpu));
+        printf("\n");
+
+    }
     free(compus);
 }
