@@ -16,6 +16,19 @@ struct compu
 
 #define N 5
 
+
+void listarPCs(struct compu pcs[], int cantidad){
+
+}
+
+void mostrarMasVieja(struct compu pcs[], int cantidad){
+
+}
+
+void mostrarMasVeloz(struct compu pcs[], int cantidad){
+    
+}
+
 int main()
 {
     srand(time(NULL));
@@ -46,3 +59,4 @@ int main()
     }
     free(compus);
 }
+
