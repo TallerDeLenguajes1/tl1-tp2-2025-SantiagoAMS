@@ -16,11 +16,15 @@ struct compu
 
 #define N 5
 
+void listarPCs(struct compu pcs[], int cantidad);
+void listarCompuIndividual(struct compu compu);
+void mostrarMasVieja(struct compu pcs[], int cantidad);
+void mostrarMasVeloz(struct compu pcs[], int cantidad);
 
 void listarPCs(struct compu pcs[], int cantidad){
     for (int i = 0 ; i<cantidad ; i++){
         
-        printf("---- COMPUTADORA 1 %d ----\n",i);
+        printf("\n ---- COMPUTADORA %d ---- \n",i);
         listarCompuIndividual(pcs[i]);
         printf("\n");
     }
