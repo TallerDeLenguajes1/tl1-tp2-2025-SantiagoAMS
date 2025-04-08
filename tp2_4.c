@@ -47,7 +47,16 @@ void mostrarMasVieja(struct compu pcs[], int cantidad){
 }
 
 void mostrarMasVeloz(struct compu pcs[], int cantidad){
-    
+    int indexVeloz = 0;
+    for (int i =0 ; i<cantidad ; i++){
+        
+        if (pcs[i].velocidad<pcs[indexVeloz].velocidad){
+            indexVeloz = i;
+        }
+        
+    }
+    printf("\nLa computadora mas veloz es esta:");
+    listarCompuIndividual(pcs[indexVeloz]);
 }
 
 int main()
@@ -57,7 +66,7 @@ int main()
         "Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
 
 
-    struct compu compus[] = (struct compu*)malloc(sizeof(struct compu)*N);
+    struct compu *compus = (struct compu*)malloc(sizeof(struct compu) * N);
 
     for (int i = 0; i < N; i++)
     {
